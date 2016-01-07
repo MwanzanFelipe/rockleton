@@ -1,0 +1,20 @@
+{% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'accounts/style.css' %}" />
+
+
+   <div>
+      
+      {% if user.is_anonymous %}
+      	<a href="{% url 'login' %}">login</a>
+      	
+      	
+
+      {% else %}
+      	Hello {{ user }}
+      	<a href="{% url 'logout' %}?next=/accounts/">logout</a>
+
+      {% endif %}
+    </div>
+
+

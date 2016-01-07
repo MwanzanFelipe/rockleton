@@ -1,0 +1,12 @@
+<h1>Register</h1>
+
+{% if registered %}
+	Registered
+{% else %}
+	<form method="POST" action="">
+	    {% csrf_token %}
+	    {{ userform.as_p }}
+	    {{ rockletonform.as_p }}
+	    <input type="submit">
+	</form>
+{% endif %}
